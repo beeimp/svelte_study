@@ -80,3 +80,7 @@ Svelte가 최적화하기 어렵기 때문에 일반적으로 권장하지 않�
   <a href="{website}">learn more here</a>
 </p>
 ```
+
+## 참조
+
+- [https://svelte.dev/tutorial/declaring-props](https://svelte.dev/tutorial/declaring-props)
