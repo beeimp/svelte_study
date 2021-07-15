@@ -125,3 +125,7 @@ foo.bar = "baz";
 ```
 
 `obj = obj`를 따르지 않는다면, `obj.foo.bar`으로 참조를 업데이트하지 않습니다.
+
+## 참조
+
+[https://svelte.dev/tutorial/reactive-assignments](https://svelte.dev/tutorial/reactive-assignments)
