@@ -54,4 +54,21 @@ const unsubscribe = count.subscribe((value) => {
 <h1>The count is {count_value}</h1>
 ```
 
-그러나 컴포넌트가 여러 Store에서 재사용하는 경우,
+그러나 특히 컴포넌트가 여러 스토어를 구독(subscribe)하는 경우 재사용 되기 시작합니다. 대신, Svelte는 스토어 네임 앞에 `$`를 붙이면 스토어 값을 참조할 수 있습니다.
+
+    ```html
+    <script>
+    	import { count } from './stores.js';
+    	import Incrementer from './Incrementer.svelte';
+    	import Decrementer from './Decrementer.svelte';
+    	import Resetter from './Resetter.svelte';
+    </script>
+
+    <h1>The count is {$count}</h1>
+    ```
+
+- Auto-subscription은 컴포넌트의 최상위 범위에서 선언되거나 가져온 스토어 변수에서만 작동합니다.
+
+마크업 내에서 `$count`를 사용하는 것만으로 제한되지 않으며, 이벤트 핸들러나 reactive 선언과 같이 `script`의 어디에서나 사용할 수 있습니다.
+
+- `$`로 시작하는 모든 이름은 스토어 값을 참조하는 것으로 가정합니다. 사실상 예약된 문자입니다. 그래서 Svelte는 `$` 접두사를 사용하여 변수를 선언할 수 없도록 합니다.
