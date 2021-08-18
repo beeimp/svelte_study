@@ -161,3 +161,18 @@ export function pannable(node) {
 ```html
 <button use:longpress={duration}
 ```
+
+이제 이벤트가 2초 후에만 시작됩니다. 하지만 시간을 줄이면 2초가 걸립니다.
+
+이를 변경하기 위해 `longpress.js`에서 업데이트 방법을 추가할 수 있습니다. 인수가 변경될 때마다 호출됩니다.
+
+```js
+return {
+  update(newDuration) {
+    duration = newDuration;
+  },
+  // ...
+};
+```
+
+- 액션에 여러 개의 인수를 전달해야 하는 경우, `use:longpress={{duration, spiciness}}`에서와 같이 단일 개체로 결합합니다.
